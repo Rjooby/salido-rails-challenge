@@ -13,7 +13,7 @@ def get_wine_data(off)
     path: 'api/beta2/service.svc/json/catalog',
     query_values: {
       offset: off,
-      size: 100,
+      size: 400,
       apikey: "2990d8c762e8ff3ec9d2f1a2240425d0"
 
 
@@ -31,7 +31,7 @@ def get_wine_data(off)
   list
 end
 
-# Breaks up product list into packages of 250 to prevent wine.com server from timing out.
+# Breaks up product list into packages of 400 to prevent wine.com server from timing out.
 
 def get_all(num)
   wine_list = []
@@ -39,7 +39,7 @@ def get_all(num)
 
   while i < num
     wine_list.concat(get_wine_data(i))
-    i += 100
+    i += 400
   end
 
   wine_list
