@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root to: "static_pages#index"
+  root to: "products#index"
 
   resources :products
   # The priority is based upon order of creation: first created -> highest priority.

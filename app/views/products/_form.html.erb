@@ -1,0 +1,37 @@
+
+<% action = (product.persisted? ? product_url(product) : products_url) %>
+<% method = (product.persisted? ? :patch : :post) %>
+
+
+
+<form id="form_id" action="<%= action %>" method="post">
+  <input type="hidden" name="_method" value="<%= method %>">
+  <input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
+
+  <label for="location_name">
+    <input type="text" name="product[name]" value="<%= product.name %>">
+  </label>
+
+  <label for="location_url">
+    <input type="text" name="product[url]" value="<%= product.url %>">
+  </label>
+
+  <label for="price_min">
+    <input type="number" name="product[price_min]" value="<%= product.price_min %>">
+  </label>
+
+
+  <label for="price_max">
+    <input type="number" name="product[price_max]" value="<%= product.price_max %>">
+  </label>
+
+  <label for="product_type">
+    <input type="text" name="product[type]" value="<%= product.wine_type %>">
+  </label>
+
+  <label for="product_year">
+    <input type="number" name="product[year]" value="<%= product.year %>">
+  </label>
+
+  <input type="submit" value="Submit">
+</form>

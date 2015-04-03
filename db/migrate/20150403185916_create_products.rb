@@ -7,8 +7,10 @@ class CreateProducts < ActiveRecord::Migration
       t.float :price_min
       t.float :price_max
       t.float :price_retail
-      t.string :type
+      t.string :wine_type
       t.integer :year
+      t.string :vineyard
+      t.string :region
 
       t.timestamps null: false
     end
