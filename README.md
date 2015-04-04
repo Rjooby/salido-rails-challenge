@@ -23,6 +23,8 @@ rails s
 ```
 to start the server. Visit http://localhost:3000 (3000 by default)in a browser. You should land on the index page populated by all the products in the database. Links to edit any of the products have been provided as well as a link to submit a new product.
 
+NOTE: Query size has been reduced significantly to cut down on database seeding size. To demonstrate load with complete database, in seeds.rb, DATABASE_SIZE should be increased to 80000 and QUERY_SIZE to 400 to reduce query count. This could take close to an hour.
+
 To run the RSpec tests for the API calls, from the command line:
 ```ruby
 be rspec spec

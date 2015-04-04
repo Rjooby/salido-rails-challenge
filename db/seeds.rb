@@ -4,7 +4,7 @@ require 'json'
 
 # Wine.api number of products amount to around 79000
 DATABASE_SIZE = 5000
-QUERY_SIZE = 100
+QUERY_SIZE = 250
 
 def get_wine_data(off)
   # API call for list of products
