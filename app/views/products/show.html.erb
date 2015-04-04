@@ -1,8 +1,17 @@
 <h2><%= @product.name %></h2>
 
-<%= @product.url %>
-<%= @product.price_min %>
-<%= @product.price_max %>
-<%= @product.price_retail %>
-<%= @product.wine_type %>
-<%= @product.year %>
+<!-- URL: <%= @product.url %> <br> -->
+Minimum Price:<%= @product.price_min %><br>
+Maximum Price:<%= @product.price_max %><br>
+Retail Price:<%= @product.price_retail %><br>
+Wine Type: <%= @product.wine_type %> <br>
+Region: <%= @product.region %> <br>
+Vineyard: <%= @product.vineyard %> <br>
+
+<br>
+
+<a href="<%=edit_product_url(@product)%>"> Edit this product</a> <br>
+<a href="<%=products_url%>">Back to list</a>
+
+<br>
+<a href="http://www.wine.com/" title="Wine.com the destination for Wine and Wine Gifts"><img src="http://cache.wine.com/images/logos/80x20_winecom_logo.png" alt="Wine.com the destination for Wine and Wine Gifts" /></a>

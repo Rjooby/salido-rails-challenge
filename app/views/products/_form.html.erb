@@ -13,10 +13,7 @@
   </label>
 
   <br>
-<!--
-  <label for="location_url">
-    <input type="text" name="product[url]" value="<%= product.url %>">
-  </label> -->
+
 
   <label for="price_min"> Minimum Price
     <input type="number" name="product[price_min]" value="<%= product.price_min %>">
@@ -30,17 +27,33 @@
 
 <br>
 
+  <label for="product_year"> Retail Price
+    <input type="number" name="product[price_retail]" value="<%= product.price_retail %>">
+  </label>
+
+<br>
+
   <label for="product_type"> Type
     <input type="text" name="product[type]" value="<%= product.wine_type %>">
   </label>
 
 <br>
 
-  <label for="product_year"> Year
-    <input type="number" name="product[year]" value="<%= product.year %>">
-  </label>
+<label for="product_region"> Region
+  <input type="text" name="product[region]" value="<%= product.region %>">
+</label>
 
 <br>
 
+<label for="product_vineyard"> Vineyard
+  <input type="text" name="product[vineyard]" value="<%= product.vineyard%>">
+</label>
+
+
+
   <input type="submit" value="Submit">
 </form>
+
+<br>
+
+<a href="http://www.wine.com/" title="Wine.com the destination for Wine and Wine Gifts"><img src="http://cache.wine.com/images/logos/80x20_winecom_logo.png" alt="Wine.com the destination for Wine and Wine Gifts" /></a>

@@ -41,6 +41,7 @@ class ProductsController < ApplicationController
       flash.now[:errors] = @product.errors.full_messages
       render :edit
     end
+
   end
 
   def destroy
