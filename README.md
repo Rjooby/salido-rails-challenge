@@ -1,9 +1,9 @@
 
-## To get it running.
+## To get it running
 
 While in the project directory, in the command line run:
 ```ruby
-bundle install.
+bundle install
 ```
 
 ```ruby
@@ -12,7 +12,7 @@ rake db:create db:migrate
 
 and
 ```ruby
-db:seed
+rake db:seed
 ```
 
 This will seed our database with all the products off of wine.com's API. This will take a very long time(40-50 minutes). For ease of set up, I left my own API key for use during the database seeding. If there are no more remaining queries, you can use figaro to set up an environment variable and use your API key after signing up for an account and replacing the key inside db/seeds.rb.
@@ -29,9 +29,7 @@ be rspec spec
 ```
 The code for the call requests tests are located in spec/controllers/products_controller_spec.rb
 
-For API calls to this database
-
-You can use the urls:
+For API calls to this database, you can use the urls:
 
 http://localhost:3000/products.json
 
@@ -43,10 +41,10 @@ for get requests or patch requests with the appropriate attributes in json form 
 
 ###Other gems used:
 
-addressable - To simplify the querybuilding for the api requests.
-rest-client - To make the API calls to the database.
-Factory Girl - Create mock models for RSpec testing.
-Faker - Create test data for mock models during RSpec testing.
+- addressable: To simplify the querybuilding for the api requests.
+- rest-client: To make the API calls to the database.
+- Factory Girl: Create mock models for RSpec testing.
+- Faker: Create test data for mock models during RSpec testing.
 
 ###Future improvements
 -Instantiate object models for nested attributes inside Product models from the wine.com API to get more comprehensive data. e.g. Appellations, Varietals, Community etc.
