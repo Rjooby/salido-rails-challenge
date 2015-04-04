@@ -3,7 +3,8 @@ require 'rest-client'
 require 'json'
 
 # Arbitrarily large number to grab all products
-LARGENUM = 80000
+DATABASE_SIZE = 80000
+QUERY_SIZE = 400
 
 def get_wine_data(off)
   # API call for list of products
@@ -13,7 +14,7 @@ def get_wine_data(off)
     path: 'api/beta2/service.svc/json/catalog',
     query_values: {
       offset: off,
-      size: 400,
+      size: QUERY_SIZE,
       apikey: "2990d8c762e8ff3ec9d2f1a2240425d0"
 
 
@@ -31,7 +32,7 @@ def get_wine_data(off)
   list
 end
 
-# Breaks up product list into packages of 400 to prevent wine.com server from timing out.
+# Breaks up product list into packages of QUERY_SIZE to prevent wine.com server from timing out.
 
 def get_all(num)
   wine_list = []
@@ -39,7 +40,7 @@ def get_all(num)
 
   while i < num
     wine_list.concat(get_wine_data(i))
-    i += 400
+    i += QUERY_SIZE
   end
 
   wine_list
@@ -47,7 +48,7 @@ end
 #
 # puts get_all(400);
 
-get_all(LARGENUM).each do |product|
+get_all(DATABASE_SIZE).each do |product|
   Product.create!(
     name: product["Name"],
     url: product["Url"],
