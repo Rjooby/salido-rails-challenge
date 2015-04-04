@@ -8,30 +8,39 @@
   <input type="hidden" name="_method" value="<%= method %>">
   <input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
 
-  <label for="location_name">
+  <label for="location_name"> Name
     <input type="text" name="product[name]" value="<%= product.name %>">
   </label>
 
+  <br>
+<!--
   <label for="location_url">
     <input type="text" name="product[url]" value="<%= product.url %>">
-  </label>
+  </label> -->
 
-  <label for="price_min">
+  <label for="price_min"> Minimum Price
     <input type="number" name="product[price_min]" value="<%= product.price_min %>">
   </label>
 
+<br>
 
-  <label for="price_max">
+  <label for="price_max"> Maximum Price
     <input type="number" name="product[price_max]" value="<%= product.price_max %>">
   </label>
 
-  <label for="product_type">
+<br>
+
+  <label for="product_type"> Type
     <input type="text" name="product[type]" value="<%= product.wine_type %>">
   </label>
 
-  <label for="product_year">
+<br>
+
+  <label for="product_year"> Year
     <input type="number" name="product[year]" value="<%= product.year %>">
   </label>
+
+<br>
 
   <input type="submit" value="Submit">
 </form>

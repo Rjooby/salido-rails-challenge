@@ -2,6 +2,7 @@ class ProductsController < ApplicationController
 
   def index
     @products = Product.all
+    render :index
   end
 
   def new
@@ -16,7 +17,9 @@ class ProductsController < ApplicationController
     @product = Product.new(product_params)
 
     if @product.save
+      redirect_to product_url(@product), status: 201
     else
+      render :new
     end
 
   end
@@ -28,6 +31,7 @@ class ProductsController < ApplicationController
   def update
     @product = Product.find(params[:id])
     if @product.update(product_params)
+      redirect_to product_url(@product)
     else
       flash.now[:errors] = @product.errors.full_messages
       render :edit
@@ -38,12 +42,12 @@ class ProductsController < ApplicationController
   def destroy
     @product = Product.find(params[:id])
     @product.destroy
-    redirect_to locations_url
+    redirect_to products_url
   end
 
   private
 
   def product_params
-    params.require(:product).permit(:vineyard, :region, :name, :url, :price_min, :price_max, :price_retail, :type, :year)
+    params.require(:product).permit(:vineyard, :region, :name, :url, :price_min, :price_max, :price_retail, :wine_type, :year)
   end
 end
