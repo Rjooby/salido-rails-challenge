@@ -2,9 +2,9 @@ require 'addressable/uri'
 require 'rest-client'
 require 'json'
 
-# Arbitrarily large number to grab all products
-DATABASE_SIZE = 80000
-QUERY_SIZE = 400
+# Wine.api number of products amount to around 79000
+DATABASE_SIZE = 5000
+QUERY_SIZE = 100
 
 def get_wine_data(off)
   # API call for list of products
