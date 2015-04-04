@@ -16,7 +16,7 @@ RSpec.describe ProductsController, :type => :controller do
       body = JSON.parse(response.body)
       products = body.map { |w| w["name"] }
 
-      expect(products).to match_array(["Chungir Merlot", "Chizely Zinfandel", "Emmasel Cabernet"])
+      expect(products).to match_array(["Chungir Merlot", "Chizely Zinfandel", "Emmasel Pinot Noir"])
       expect(response.status).to eq 200
 
     end
