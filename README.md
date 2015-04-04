@@ -1,3 +1,19 @@
+
+## To get it running.
+
+In the command line
+  1. run bundle install.
+  2. be rake db:create db:migrate
+  3. db:seed
+
+
+
+
+
+
+
+------------
+
 # Challenge for Rails Engineer
 To better assess a candidates development skills, we provide this following challenge.  You have as much time as you'd like (though we ask that you not spend more than a few hours).
 
@@ -31,13 +47,13 @@ Here's what your application must do:
 
 Your application does not need to:
 
-1. handle authentication or authorization 
+1. handle authentication or authorization
 1. be aesthetically pleasing
 
 Your application should be easy to set up and run on Rails 4 or later.  It should not require any for-pay software.
 
 ## Evaluation
-Evaluation of your submission will be based on the following criteria. 
+Evaluation of your submission will be based on the following criteria.
 
 1. Did your application fulfill the basic requirements?
 1. Did you document the method for setting up and running your application?

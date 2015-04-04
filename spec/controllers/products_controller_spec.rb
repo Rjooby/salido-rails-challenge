@@ -37,15 +37,15 @@ RSpec.describe ProductsController, :type => :controller do
         }
       }
 
-        request_headers = {
-          "Accept" => "application/json",
-          "Content-Type" => "application/json"
-        }
+      request_headers = {
+        "Accept" => "application/json",
+        "Content-Type" => "application/json"
+      }
 
-        post :create, product_params, request_headers
+      post :create, product_params, request_headers
 
-        expect(Product.first.name).to eq "Erada Cabernet"
-        expect(response.status).to eq 201
+      expect(Product.first.name).to eq "Erada Cabernet"
+      expect(response.status).to eq 201
 
     end
   end

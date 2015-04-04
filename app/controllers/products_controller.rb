@@ -41,13 +41,12 @@ class ProductsController < ApplicationController
       flash.now[:errors] = @product.errors.full_messages
       render :edit
     end
-
   end
 
   def destroy
-    @product = Product.find(params[:id])
-    @product.destroy
-    redirect_to products_url
+    # @product = Product.find(params[:id])
+    # @product.destroy
+    # redirect_to products_url
   end
 
   private
